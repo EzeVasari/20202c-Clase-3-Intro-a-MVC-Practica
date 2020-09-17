@@ -3,23 +3,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model AlimentosCRUD.Models.Alimento
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Agregar</title>
+    <title>Modificar</title>
 </head>
 <body>
     <div>
-        <form action="/Alimento/Agregar" method="post">
+        <form action="/Alimento/Modificar" method="post">
+            <input name="Id" type="hidden" value="@Model.Id">
             <div class="form-group">
                 <label>Nombre</label>
-                <input class="form-control" type="text" name="Nombre" placeholder="Ingrese nombre de alimento">
+                <input class="form-control" type="text" name="Nombre" value="@Model.Nombre">
             </div>
             <div class="form-group">
                 <label>Precio</label>
-                <input class="form-control" type="number" name="Precio" placeholder="Ingrese precio">
+                <input class="form-control" type="number" name="Precio" value="@Model.Precio">
             </div>
             <button type="submit" class="btn btn-primary">Agregar</button>
         </form>

@@ -28,5 +28,23 @@ namespace AlimentosCRUD.Services
 
             listaAlimentos.Add(a);
         }
+
+        public Alimento AlimentoPorId(int id)
+        {
+            return listaAlimentos.Find(o => o.Id == id);
+        }
+
+        public void ModificarAlimento(Alimento a)
+        {
+            Alimento alimento = AlimentoPorId(a.Id);
+
+            alimento.Nombre = a.Nombre;
+            alimento.Precio = a.Precio;
+        }
+
+        internal void EliminarAlimento(int id)
+        {
+            listaAlimentos.RemoveAll(o => o.Id == id);
+        }
     }
 }

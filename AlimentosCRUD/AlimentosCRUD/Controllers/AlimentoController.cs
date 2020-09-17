@@ -31,5 +31,28 @@ namespace AlimentosCRUD.Controllers
 
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Modificar(int id)
+        {
+            Alimento a = AlimentoService.AlimentoPorId(id);
+            
+            return View(a);
+        }
+
+        [HttpPost]
+        public ActionResult Modificar(Alimento a)
+        {
+            AlimentoService.ModificarAlimento(a);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Eliminar(int id)
+        {
+            AlimentoService.EliminarAlimento(id);
+
+            return RedirectToAction("Index");
+        }
     }
 }
