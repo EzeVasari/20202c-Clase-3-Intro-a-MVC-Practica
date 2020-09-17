@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model List<AlimentosCRUD.Models.Alimento>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var a in Model)
+                {
+                    <tr>
+                        <th scope="row">@a.Id</th>
+                        <td>@a.Nombre</td>
+                        <td>@a.Precio</td>                      
+                    </tr>
+                }                               
+            </tbody>
+        </table>        
+    </div>
+</body>
+</html>
+
