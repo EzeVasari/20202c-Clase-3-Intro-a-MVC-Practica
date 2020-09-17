@@ -1,5 +1,7 @@
 ﻿@model List<AlimentosCRUD.Models.Alimento>
-
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 <html>
 <head>
     <title></title>
@@ -11,7 +13,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Precio</th>                   
+                    <th scope="col">Precio</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,15 +23,14 @@
                         <th scope="row">@a.Id</th>
                         <td>@a.Nombre</td>
                         <td>@a.Precio</td>
-                        <td>@a.Precio</td>
                         <td>
                             <a href="/Alimento/Modificar/@a.Id">Modificar</a>
                             <a href="/Alimento/Eliminar/@a.Id">Eliminar</a>
                         </td>
                     </tr>
-                }                               
+                }
             </tbody>
-        </table>        
+        </table>
     </div>
 </body>
 </html>
