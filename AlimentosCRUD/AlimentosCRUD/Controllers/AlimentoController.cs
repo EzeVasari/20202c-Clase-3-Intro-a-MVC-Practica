@@ -15,7 +15,8 @@ namespace AlimentosCRUD.Controllers
         public ActionResult Index()
         {
             List<Alimento> alimentos = AlimentoService.ObtenerAlimentos();
-            return View();
+
+            return View(alimentos);
         }
     }
 }

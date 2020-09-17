@@ -14,5 +14,19 @@ namespace AlimentosCRUD.Services
         {
             return listaAlimentos;
         }
+
+        public void CrearAlimento(Alimento a)
+        {
+            int maxId = 0;
+
+            if(listaAlimentos.Count > 0)
+            {
+                maxId = listaAlimentos.Max(o => o.Id);
+            }
+
+            a.Id = maxId + 1;
+
+            listaAlimentos.Add(a);
+        }
     }
 }

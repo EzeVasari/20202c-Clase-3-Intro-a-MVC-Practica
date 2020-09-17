@@ -1,15 +1,11 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿@model List<AlimentosCRUD.Models.Alimento>
 
-@model List<AlimentosCRUD.Models.Alimento>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <title></title>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-2">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -24,7 +20,12 @@
                     <tr>
                         <th scope="row">@a.Id</th>
                         <td>@a.Nombre</td>
-                        <td>@a.Precio</td>                      
+                        <td>@a.Precio</td>
+                        <td>@a.Precio</td>
+                        <td>
+                            <a href="/Alimento/Modificar/@a.Id">Modificar</a>
+                            <a href="/Alimento/Eliminar/@a.Id">Eliminar</a>
+                        </td>
                     </tr>
                 }                               
             </tbody>
