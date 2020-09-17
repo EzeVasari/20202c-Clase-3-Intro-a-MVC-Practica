@@ -18,5 +18,18 @@ namespace AlimentosCRUD.Controllers
 
             return View(alimentos);
         }
+
+        public ActionResult Agregar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Agregar(Alimento a)
+        {
+            AlimentoService.CrearAlimento(a);
+
+            return RedirectToAction("Index");
+        }
     }
 }
