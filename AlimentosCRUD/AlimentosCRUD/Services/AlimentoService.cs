@@ -42,7 +42,7 @@ namespace AlimentosCRUD.Services
             alimento.Precio = a.Precio;
         }
 
-        internal void EliminarAlimento(int id)
+        public void EliminarAlimento(int id)
         {
             listaAlimentos.RemoveAll(o => o.Id == id);
         }
